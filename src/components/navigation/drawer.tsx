@@ -5,16 +5,16 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { mergeClasses } from '@/lib/utils';
 
 const Drawer = DrawerPrimitive.Root;
-
 const DrawerTrigger = DrawerPrimitive.Trigger;
-
 const DrawerClose = DrawerPrimitive.Close;
 
-const DrawerPortal = ({
-  className,
-  ...props
-}: DrawerPrimitive.DialogPortalProps) => (
-  <DrawerPrimitive.Portal className={mergeClasses(className)} {...props} />
+// ✅ FIX: Extend props to include className
+interface DrawerPortalProps extends DrawerPrimitive.DialogPortalProps {
+  className?: string;
+}
+
+const DrawerPortal = ({ className, ...props }: DrawerPortalProps) => (
+  <DrawerPrimitive.Portal {...props} />
 );
 DrawerPortal.displayName = DrawerPrimitive.Portal.displayName;
 
