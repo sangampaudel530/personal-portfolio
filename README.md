@@ -11,19 +11,19 @@ Showcasing my background, skills, and projects as a passionate computer engineer
 
 ###  General Intro
 
-![Hero Section](./public/screenshots/hero-section.png)
+![Hero Section](./screenshots/hero-section.png)
 
 ### Skills 
 
-![Skills Section](./public/screenshots/skills-section.png)
+![Skills Section](./screenshots/skills-section.png)
 
 ###  Projects 
 
-![Projects Section](./public/screenshots/projects-section.png)
+![Projects Section](./screenshots/projects-section.png)
 
 ###  Testimonials 
 
-![Testimonials Section](./public/screenshots/testimonials-section.png)
+![Testimonials Section](./screenshots/testimonials-section.png)
 
 ##  Built With
 
