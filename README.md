@@ -11,7 +11,7 @@ Showcasing my background, skills, and projects as a passionate computer engineer
 
 ###  General Intro
 
-![Hero Section]()
+![Hero Section](./screenshots/hero-section.png)
 
 ### Skills 
 
