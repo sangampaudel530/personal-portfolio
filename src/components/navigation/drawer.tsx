@@ -10,14 +10,8 @@ const DrawerTrigger = DrawerPrimitive.Trigger;
 
 const DrawerClose = DrawerPrimitive.Close;
 
-// Fix: DrawerPortal does NOT accept className directly, so wrap with a div for styling
-const DrawerPortal = ({
-  className,
-  ...props
-}: DrawerPrimitive.DialogPortalProps & { className?: string }) => (
-  <DrawerPrimitive.Portal {...props}>
-    <div className={mergeClasses(className)} />
-  </DrawerPrimitive.Portal>
+const DrawerPortal = (props: DrawerPrimitive.DialogPortalProps) => (
+  <DrawerPrimitive.Portal {...props} />
 );
 DrawerPortal.displayName = DrawerPrimitive.Portal.displayName;
 
