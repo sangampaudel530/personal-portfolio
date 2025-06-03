@@ -21,11 +21,11 @@ const ProjectDetails = ({
   layoutType = 'default',
 }: ProjectDetailsProps) => {
   return (
-    <Card className="mx-auto flex w-full max-w-6xl flex-col md:flex-row">
+    <Card className={`mx-auto flex w-full max-w-6xl flex-col border-t-4 border-r-4 border-[#232d45] md:flex-row ${layoutType === 'default' ? "hover:rotate-2" : "hover:-rotate-2"}`}>
       {/* Image */}
       <div
         className={mergeClasses(
-          'flex items-center justify-center border-gray-100 bg-gray-50 p-8 dark:bg-gray-200 max-md:rounded-t-xl md:w-1/2 lg:p-12',
+          'flex items-center justify-center border-gray-100 bg-gradient-to-r from-gray-50 to-gray-100 p-2 dark:bg-gray-200 max-md:rounded-t-xl md:w-1/2 lg:p-12',
           layoutType === 'default'
             ? 'md:rounded-l-xl md:border-r'
             : 'md:order-last md:rounded-r-xl md:border-l'
@@ -35,7 +35,7 @@ const ProjectDetails = ({
           <Image
             src={previewImage}
             alt={`${name} preview`}
-            className="rounded-xl shadow-lg transition-transform duration-500 md:hover:scale-105"
+            className="rounded-xl shadow-lg min-h-[300px] transition-transform duration-500 md:hover:scale-105 hover:-rotate-3"
             style={{ objectFit: 'cover' }}
           />
         </Link>

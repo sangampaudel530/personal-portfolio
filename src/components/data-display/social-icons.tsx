@@ -9,9 +9,10 @@ const SocialIcons = () => {
       {SOCIAL_LINKS.map((socialLink, index) => (
         <IconButton
           key={index}
+          className="0 hover:bg-violet-800 hover:text-green-400"
           onClick={() => window.open(socialLink.url, '_blank')}
         >
-          <socialLink.icon />
+          <socialLink.icon   />
         </IconButton>
       ))}
     </div>

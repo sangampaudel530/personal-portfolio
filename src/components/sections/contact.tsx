@@ -10,6 +10,7 @@ import Typography from '@/components/general/typography';
 import Container from '@/components/layout/container';
 import useWindowSize from '@/hooks/use-window-size';
 import { copyTextToClipboard } from '@/lib/utils';
+import { BsCopy } from "react-icons/bs";
 
 const email = 'sangampaudel530@gmail.com';
 
@@ -33,64 +34,82 @@ const ContactSection = () => {
 
   return (
     <Container id="contact">
-      <div className="flex flex-col items-center gap-4 mb-8">
+      <div className="flex flex-col items-center gap-4 mb-4">
         <Tag label="Get in touch" />
         <Typography variant="subtitle" className="max-w-xl text-center">
           What’s next? Feel free to reach out to me if you are looking for a
           Data Scientist, have a query, or simply want to connect.
         </Typography>
       </div>
+      <button
+        onClick={() => {
+          navigator.clipboard.writeText('subeshgaming@gmail.com');
+          alert('Email copied to clipboard!');
+        }}
+        className="group relative overflow-hidden border-2 border-[#546397] w-[150px] mx-auto px-4 py-2 rounded-sm resume-btn bg-transparent"
+      >
+        <span className="relative z-10 text-white flex justify-center items-center gap-2 group-hover:text-blue-950 transition-colors duration-300">
+          Copy Email <BsCopy className="text-white group-hover:text-[#030712] transition-colors duration-300" />
+        </span>
+        <span className="absolute inset-0 bg-[#546397] translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out z-0"></span>
+      </button>
 
-      {/* Email Display */}
-      <div className="flex justify-center items-center gap-3 mb-6">
-        <Mail className="h-6 w-6 md:h-8 md:w-8" />
-        <Typography variant="h2">{email}</Typography>
-        <IconButton
-          size={width && width < 768 ? 'md' : 'lg'}
-          onClick={() => handleCopyClick(email)}
-          showTooltip={isCopied}
-          tooltipText="Copied!"
-        >
-          <Copy />
-        </IconButton>
-      </div>
+
+
 
       {/* Contact Form */}
       <form
         action="https://formspree.io/f/mwpodryg"
         method="POST"
-        className="w-full max-w-2xl mx-auto mb-10 bg-white/5 dark:bg-white/5 p-6 md:p-10 rounded-2xl shadow-md space-y-5"
+        className="mx-auto w-[350px] sm:w-[450px]  p-8 md:p-12 rounded-2xl relative overflow-hidden
+    border-t-2 border-l-2 border-[#162a50] shadow-xl shadow-[#171f31]
+    bg-white/5 backdrop-blur-md
+    hover:border-t-8 hover:border-l-8
+    transition-all duration-300
+    space-y-6"
       >
+      
+        <div className="absolute -top-1/2 -right-[70%] w-full h-full bg-[#131923] blur-[60px] -z-10 rounded-2xl"></div>
+
+     
         <div className="flex flex-col gap-1">
-          <label htmlFor="name" className="font-medium text-sm text-neutral-300">
+          <label htmlFor="name" className="font-medium text-sm text-slate-400">
             Name
           </label>
           <input
             id="name"
             name="name"
             required
-            className="bg-transparent border border-neutral-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
-            placeholder="Your Name"
             type="text"
+            placeholder="Your Name"
+            className="bg-transparent border border-[#162a50] rounded-lg px-4 py-2
+        text-gray-300 placeholder:text-gray-500
+        focus:outline-none focus:ring-2 focus:ring-[#1f3050]
+        transition"
           />
         </div>
 
+    
         <div className="flex flex-col gap-1">
-          <label htmlFor="email" className="font-medium text-sm text-neutral-300">
+          <label htmlFor="email" className="font-medium text-sm text-slate-400">
             Email
           </label>
           <input
             id="email"
             name="email"
-            type="email"
             required
-            className="bg-transparent border border-neutral-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
+            type="email"
             placeholder="you@example.com"
+            className="bg-transparent border border-[#162a50] rounded-lg px-4 py-2
+        text-gray-300 placeholder:text-gray-500
+        focus:outline-none focus:ring-2 focus:ring-[#1f3050]
+        transition"
           />
         </div>
 
+ 
         <div className="flex flex-col gap-1">
-          <label htmlFor="message" className="font-medium text-sm text-neutral-300">
+          <label htmlFor="message" className="font-medium text-sm text-slate-400">
             Message
           </label>
           <textarea
@@ -98,20 +117,32 @@ const ContactSection = () => {
             name="message"
             required
             rows={5}
-            className="bg-transparent border border-neutral-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent"
             placeholder="Write your message here..."
+            className="bg-transparent border border-[#162a50] rounded-lg px-4 py-2
+        text-gray-300 placeholder:text-gray-500
+        focus:outline-none focus:ring-2 focus:ring-[#1f3050]
+        transition resize-none"
           />
         </div>
 
+
         <button
           type="submit"
-          className="w-full md:w-fit px-6 py-2 rounded-xl bg-accent hover:bg-accent/90 transition text-white font-medium"
+          className="relative overflow-hidden w-full md:w-fit px-6 py-2 rounded-xl
+    bg-[#1f3050] text-white font-semibold shadow-lg
+    before:absolute before:top-0 before:left-full before:h-full before:w-full
+    before:bg-[#546397] before:transition-transform before:duration-300
+    hover:before:-translate-x-full
+    transition-colors duration-300"
         >
-          Send Message
+          <span className="relative z-10">Send Message</span>
         </button>
+
       </form>
 
-      {/* Social Media Icons */}
+
+
+
       <div className="flex flex-col items-center gap-3 mt-8">
         <Typography className="text-center text-base text-neutral-300">
           You may also find me on these platforms!
