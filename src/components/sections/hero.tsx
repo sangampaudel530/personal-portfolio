@@ -8,20 +8,29 @@ import Container from '@/components/layout/container';
 
 const HeroSection = () => {
   return (
-    <Container id="hero">
+    <Container
+      id="hero"
+      className="bg-white dark:bg-[radial-gradient(circle_at_top_left,_#111827,_#030712)]"
+    >
       <div className="flex flex-col gap-12 md:flex-row">
         {/* Image */}
         <div className="flex items-center justify-center md:order-last md:flex-grow md:justify-end">
-          <div className="relative h-[300px] w-[280px] md:h-[360px] md:w-[320px]">
-            <Image
-              src={SangamHeadshot}
-              alt="Headshot of Sangam"
-              className="absolute z-10 h-[280px] w-[240px] border-8 border-gray max-md:left-5 md:left-0 md:top-0 md:h-[320px] md:w-[280px]"
-              style={{ objectFit: 'cover' }}
-            />
-            <div className="absolute h-[280px] w-[280px] border-8 border-transparent bg-gray-200 max-md:top-5 md:bottom-0 md:right-0 md:h-[320px] md:w-[280px]" />
+          <div className="group relative h-[300px] w-[280px] md:h-[360px] md:w-[320px] perspective-[1000px]">
+            <div className="relative h-full w-full transform-gpu transition-transform duration-500 group-hover:rotate-x-[12deg] group-hover:rotate-y-[6deg]">
+          
+              <Image
+                src={SangamHeadshot}
+                alt="Headshot of Sangam"
+                className="absolute z-10 h-[280px] w-[240px] rounded-xl border-4 border-[#162a50] object-cover max-md:left-5 md:left-0 md:top-0 md:h-[320px] md:w-[280px]"
+              />
+
+            
+              <div className="absolute left-3 top-3 h-[280px] w-[240px] rounded-xl border-4 border-transparent bg-[#1f3050] opacity-70 transition-all duration-500 group-hover:left-5 group-hover:top-5 md:h-[320px] md:w-[280px]" />
+            </div>
           </div>
         </div>
+
+
 
         {/* Content */}
         <div className="flex max-w-3xl flex-grow flex-col justify-center gap-8 md:order-first md:items-start md:justify-center 2xl:gap-12">
@@ -58,5 +67,6 @@ const HeroSection = () => {
     </Container>
   );
 };
+
 
 export default HeroSection;
